@@ -1,10 +1,12 @@
 #include <iostream>
 #include <string>
+
 using namespace std;
 
 class ATM
 {
 private:
+
     string username;
     string pincode;
     int amount;
@@ -75,8 +77,8 @@ public:
         limit++;
     }
 
-    static bool login(ATM arr[], int Count)
-    {
+static bool login(ATM arr[], int Count)
+{
         if (!registeredusers)
         {
             cerr << "Please register first!" << endl;
@@ -137,10 +139,10 @@ public:
             }
             return false;
         }
-    }
+}
 
-    static void withdraw(ATM arr[], int usercount)
-    {
+static void withdraw(ATM arr[], int usercount)
+{
         if (!registeredusers)
         {
             cerr << "Please register first!" << endl;
@@ -192,10 +194,10 @@ public:
         arr[index].amount -= amount;
         cout << "Withdrawal of " << amount << " successful." << endl;
         cout << "Current balance: " << arr[index].amount << endl;
-    }
+}
 
-    void deposit(ATM arr[], int noofusers)
-    {
+void deposit(ATM arr[], int noofusers)
+{
         if (!registeredusers)
         {
             cerr << "Please register first!" << endl;
@@ -241,10 +243,10 @@ public:
         arr[index].amount += amount;
         cout << "Deposit of " << amount << " successful." << endl;
         cout << "Current balance: " << arr[index].amount << endl;
-    }
+}
 
-    static void transfer(ATM arr[], int usercount)
-    {
+static void transfer(ATM arr[], int usercount)
+{
         if (!registeredusers)
         {
             cerr << "Please register first!" << endl;
@@ -317,7 +319,7 @@ public:
         cout << "Transfer of " << amount << " successful." << endl;
         cout << "Current balance of " << arr[senderIndex].username << ": " << arr[senderIndex].amount << endl;
         cout << "Current balance of " << arr[receiverIndex].username << ": " << arr[receiverIndex].amount << endl;
-    }
+}
 };
 bool ATM::registeredusers = false;
 
